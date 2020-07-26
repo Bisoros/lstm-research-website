@@ -16,9 +16,11 @@ def submit():
     try:
         arr = list(map(int, list(request.get_json())))
         if not all([i == 0 or i == 1 for i in arr]):
+            print(arr)
             return "false"
         np.savetxt('data/' + token_hex(16) + '.csv', np.array(arr), delimiter=',', fmt='%.0f')
-    except:
+    except Exception as e:
+        print(e)
         return "false"
 
     return "true"
