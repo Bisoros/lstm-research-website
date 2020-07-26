@@ -76,24 +76,25 @@
 <html>
 
 <body onload="randomColor()">
-    <div class="instructions">
-        <p> <b>Please press the round buttons bellow, in a random fashion, in any succession, however many times you
-                wish. Afterwards press the submit button.</b> You may repeat this procedure as many times as you wish.
-            <br>
-            Alternatively, you can use the keyboard: press <b>A</b> to activate the blue button, <b>D</b> to activate
-            the red button, <b>Enter</b> to submit.</p>
-    </div>
-
     <div class="outer">
         <div class="middle">
+            <div class="instructions">
+                <p><b>Please press the round buttons bellow, in a random fashion, in any succession, however many times
+                        you wish. Afterwards press the submit button.</b> You may repeat this procedure as many times as
+                    you wish.
+                    <br>
+                    Alternatively, you can use the keyboard: press <b>A</b> to activate the blue button, <b>D</b> to
+                    activate the red button, <b>Enter</b> to submit.</p>
+            </div>
             <div class="inner">
                 <div class="space"></div>
                 <div class="button">
                     <button id="a" class="a" onclick="push(0)">A</button>
                     <button id="d" class="d" onclick="push(1)">D</button>
                 </div>
-                <button id="submit" class="submit" onclick="submit()">Submit</button>
+                <div class="space2"></div>
             </div>
+            <button id="submit" class="submit" onclick="submit()">Submit</button>
         </div>
     </div>
 
@@ -173,11 +174,11 @@
     }
 
     .space {
-        height: 300px;
+        height: 100px;
     }
 
     .instructions {
-        font-size: xx-large;
+        font-size: 35px;
         display: inline-block;
         border: 5px solid black;
         background: white;
@@ -190,7 +191,9 @@
     .submit {
         font-size: 50px;
         border: 5px solid white;
-        background: rgb(0, 200, 0) /* rgb(89, 185, 89)*/;
+        background: rgb(0, 200, 0)
+            /* rgb(89, 185, 89)*/
+        ;
         border-radius: 10px;
         text-align: center;
         padding: 15px;
@@ -215,5 +218,16 @@
 
     b {
         font-weight: 900;
+    }
+
+    @media only screen and (max-device-width: 720px) {
+        .space2 {
+            height: 500px;
+        }
+
+        .submit {
+            width: 500px;
+            height: 300px;
+        }
     }
 </style>
