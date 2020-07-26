@@ -77,11 +77,11 @@
 
 <body onload="randomColor()">
     <div class="instructions">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
+        <p> <b>Please press the round buttons bellow, in a random fashion, in any succession, however many times you
+                wish. Afterwards press the submit button.</b> You may repeat this procedure as many times as you wish.
+            <br>
+            Alternatively, you can use the keyboard: press <b>A</b> to activate the blue button, <b>D</b> to activate
+            the red button, <b>Enter</b> to submit.</p>
     </div>
 
     <div class="outer">
@@ -127,7 +127,6 @@
         margin-left: auto;
         margin-right: auto;
         width: 720px;
-        /*whatever width you want*/
     }
 
     .button>button {
@@ -180,7 +179,6 @@
     .instructions {
         font-size: xx-large;
         display: inline-block;
-        /* width: 720px; */
         border: 5px solid black;
         background: white;
         border-radius: 10px;
@@ -190,17 +188,17 @@
     }
 
     .submit {
-        font-size: xx-large;
-        /* display: inline-block; */
-        /* width: 720px; */
+        font-size: 50px;
         border: 5px solid white;
-        background: rgb(0, 255, 0);
+        background: rgb(0, 200, 0) /* rgb(89, 185, 89)*/;
         border-radius: 10px;
         text-align: center;
         padding: 15px;
         margin: 30px;
         cursor: pointer;
         color: white;
+        width: 250px;
+        height: 150px;
     }
 
     .submit:hover {
@@ -213,5 +211,9 @@
 
     button {
         touch-action: manipulation;
+    }
+
+    b {
+        font-weight: 900;
     }
 </style>
