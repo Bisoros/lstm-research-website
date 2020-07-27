@@ -41,8 +41,12 @@
         xhr.open('POST', '/submit', true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         xhr.send(JSON.stringify(res));
-        randomColor();
         res = [];
+        randomColor();
+        console.log(document.getElementById('submited').style.filter)
+        document.getElementById('submited').classList.toggle('fade');
+        await sleep(750);
+        document.getElementById('submited').classList.toggle('fade');
     }
 
     function sleep(ms) {
@@ -77,12 +81,13 @@
 <html>
 
 <body onload="randomColor()">
+    <div id="submited">Submited ✔️ ✅</div>
     <div class="outer">
         <div class="middle">
             <div class="instructions">
-                <p><b>Please press the round buttons bellow, in a random fashion, in any succession, however many times
+                <p><b>Please press the round buttons below, in a random fashion, in any succession, however many times
                         you wish. Afterwards press the submit button.</b> You may repeat this procedure as many times as
-                    you wish.
+                    you want.
                     <br>
                     Alternatively, you can use the keyboard: press <b>A</b> to activate the blue button, <b>D</b> to
                     activate the red button, <b>Enter</b> to submit.</p>
@@ -200,9 +205,7 @@
     .submit {
         font-size: 50px;
         border: 5px solid white;
-        background: rgb(0, 200, 0)
-            /* rgb(89, 185, 89)*/
-        ;
+        background: rgb(0, 200, 0);
         border-radius: 10px;
         text-align: center;
         padding: 15px;
@@ -229,6 +232,31 @@
         font-weight: 900;
     }
 
+    #submited {
+        font-size: 40px;
+        border: 5px solid green;
+        background: white;
+        border-radius: 10px;
+        margin: 10px;
+        color: green;
+        width: 300px;
+        height: 100px;
+        z-index: 1000;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    #submited.fade {
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
     @media only screen and (max-device-width: 720px) {
         .space2 {
             height: 500px;
@@ -245,6 +273,12 @@
 
         .submit {
             font-size: 75px;
+        }
+
+        #submited {
+            font-size: 60px;
+            width: 400px;
+            height: 150px;
         }
     }
 </style>
