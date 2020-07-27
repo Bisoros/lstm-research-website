@@ -36,14 +36,13 @@
         randomColor();
     }
 
-    function submit() {
+    async function submit() {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', '/submit', true);
         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
         xhr.send(JSON.stringify(res));
         res = [];
         randomColor();
-        console.log(document.getElementById('submited').style.filter)
         document.getElementById('submited').classList.toggle('fade');
         await sleep(750);
         document.getElementById('submited').classList.toggle('fade');
